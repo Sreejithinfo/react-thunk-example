@@ -7,8 +7,7 @@ function List() {
 	const data = useSelector((state) => state.data);
 
 	useEffect(() => {
-		dispatch({ type: "GET_DATA" });
-		dispatch(getData);
+		getData(dispatch);
 	}, [dispatch]);
 
 	return data?.length ? data.map((d, i) => <p key={i}>{d.title}</p>) : "Loading...";
